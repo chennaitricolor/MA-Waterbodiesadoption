@@ -1,0 +1,12 @@
+{
+  "body": {
+    "name": "Test name",
+    "zone": "08",
+    "ward": "123",
+    "person_name": "vaidhy",
+    "person_email": "vaidhyanathan93@gmail.com",
+    "org_name": "Freshworks",
+    "personal_number": "9514529578",
+    "otp": "3585"
+  }
+}

@@ -1,0 +1,36 @@
+service: my-project
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  environment:
+    # replace these env variables with your twilio account values
+    TWILIO_ACCOUNT_SID: YOUR-TWILIO-ACCOUNT-SID-HERE
+    TWILIO_AUTH_TOKEN: YOUR-TWILIO-AUTH-TOKEN-HERE
+    TWILIO_PHONE_NUMBER: YOUR-TWILIO-PHONE-NUMBER-HERE
+
+package:
+  exclude:
+    - "*.test.js"
+    # - "node_modules/**"
+    # - "!node_modules/@sendgrid/**"
+    # - "!node_modules/request/**"
+    - "frontend/**"
+
+functions:
+  sendMail:
+    handler: handler.sendMail
+    events:
+      - http:
+          path: api/sendMail
+          method: post
+          integration: lambda
+          cors: true
+  sendOtp:
+    handler: handler.sendOtp
+    events:
+      - http:
+          path: api/sendOtp
+          method: post
+          integration: lambda
+          cors: true
