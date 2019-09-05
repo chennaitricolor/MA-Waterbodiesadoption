@@ -1,7 +1,7 @@
 const Messenger = require("./messenger.js");
 
 const SENDGRID_API_KEY =
-  "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";
+  "XXXXXXXXXXXXX";
 const sendGridClient = require("@sendgrid/mail");
 sendGridClient.setApiKey(SENDGRID_API_KEY);
 const SEND_GRID_FROM = "vaidhyanathan93@gmail.com";
@@ -49,7 +49,7 @@ module.exports.sendMail = (event, context, callback) => {
     "method": "POST",
     "hostname": "control.msg91.com",
     "port": null,
-    "path": "/api/verifyRequestOTP.php?authkey=134544A3sKJWia5d4c5272&mobile="+event.body.personal_number+"&otp="+event.body.otp,
+    "path": "/api/verifyRequestOTP.php?authkey=XXXXXXX&mobile="+event.body.personal_number+"&otp="+event.body.otp,
     "headers": {
       "content-type": "application/x-www-form-urlencoded"
     }
@@ -97,7 +97,7 @@ module.exports.sendOtp = (event, context, callback) => {
     "method": "POST",
     "hostname": "control.msg91.com",
     "port": null,
-    "path": "/api/sendotp.php?sender=OTPSMS&mobile="+event.body.personal_number+"&authkey=134544A3sKJWia5d4c5272",
+    "path": "/api/sendotp.php?sender=OTPSMS&mobile="+event.body.personal_number+"&authkey=XXXXXXXX",
     "headers": {}
   };
 
